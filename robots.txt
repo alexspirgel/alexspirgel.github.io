@@ -1,0 +1,4 @@
+User-agent: * 
+
+# Remove on launch
+Disallow: /
