@@ -1,0 +1,10 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve">
+	<style type="text/css">
+		.background{fill:#272822;}
+		.text{fill:#ffffff;}
+	</style>
+	<polygon class="text" points="250,200 250,150 150,150 150,100 300,100 300,250 400,250 400,300 300,300 300,350 250,350 250,250 150,250 150,350 100,350 100,150 150,150 150,200 "/>
+	<rect class="text" x="350" y="150" width="100" height="50"/>
+	<rect class="background" x="150" y="150" width="100" height="50"/>
+	<path class="background" d="M450,150V0H0v450h450V200H350v-50H450z M400,250v50H300v50h-50V250H150v100h-50V150h50v-50h150v150H400z"/>
+</svg>

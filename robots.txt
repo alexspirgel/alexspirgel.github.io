@@ -1,4 +1,2 @@
-User-agent: * 
-
-# Remove on launch
-Disallow: /
+User-agent: *
+Allow: /
