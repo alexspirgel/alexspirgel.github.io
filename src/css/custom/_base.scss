@@ -1,0 +1,41 @@
+@function rem($size) {
+  @return $size / 16 * 1rem;
+}
+
+$color-light-1: #ffffff;
+$color-light-2: #fdf9f3;
+$color-light-3: #eae7e2;
+
+$color-dark-1: #1d1e18;
+$color-dark-2: #272822;
+$color-dark-3: #3a3b33;
+
+$color-red: #ff6188;
+$color-orange: #fc9867;
+$color-yellow: #ffd866;
+$color-green: #a9dc76;
+$color-blue: #78dce8;
+$color-purple: #ab9df2;
+
+$ubuntu: 'Ubuntu', sans-serif;
+$arvo: 'Arvo', serif;
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $color-dark-2;
+}
+
+h1 {
+	padding: rem(50) 0;
+	font-family: $ubuntu;
+	font-weight: 500;
+	text-align: center;
+	color: #ffffff;
+}
+
+p, a {
+	font-family: $arvo;
+	text-align: center;
+	color: #ffffff;
+}

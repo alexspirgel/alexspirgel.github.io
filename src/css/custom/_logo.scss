@@ -1,0 +1,54 @@
+.logo {
+	&__link {
+		display: block;
+		position: relative;
+		width: rem(45);
+		height: rem(45);
+	}
+	&__svg {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+	&__blocks {
+		display: grid;
+		grid-template-rows: repeat(9, 1fr);
+		grid-template-columns: repeat(9, 1fr);
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&__block {
+		transition-property: background-color;
+		transition-duration: 0.5s;
+		&:hover {
+			transition: none;
+			&.red {
+				background-color: $color-red;
+			}
+			&.orange {
+				background-color: $color-orange;
+			}
+			&.yellow {
+				background-color: $color-yellow;
+			}
+			&.green {
+				background-color: $color-green;
+			}
+			&.blue {
+				background-color: $color-blue;
+			}
+			&.purple {
+				background-color: $color-purple;
+			}
+		}
+		&.background {
+			background-color: $color-dark-2;
+		}
+		&.text {
+			background-color: $color-light-2
+		}
+	}
+}

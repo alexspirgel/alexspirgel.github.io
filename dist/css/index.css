@@ -1,0 +1,63 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #272822; }
+
+h1 {
+  padding: 3.125rem 0;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  text-align: center;
+  color: #ffffff; }
+
+p, a {
+  font-family: "Arvo", serif;
+  text-align: center;
+  color: #ffffff; }
+
+.header {
+  padding: 0.3125rem;
+  background-color: #fdf9f3; }
+
+.logo__link {
+  display: block;
+  position: relative;
+  width: 2.8125rem;
+  height: 2.8125rem; }
+
+.logo__svg {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+.logo__blocks {
+  display: grid;
+  grid-template-rows: repeat(9, 1fr);
+  grid-template-columns: repeat(9, 1fr);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.logo__block {
+  transition-property: background-color;
+  transition-duration: 0.5s; }
+  .logo__block:hover {
+    transition: none; }
+    .logo__block:hover.red {
+      background-color: #ff6188; }
+    .logo__block:hover.orange {
+      background-color: #fc9867; }
+    .logo__block:hover.yellow {
+      background-color: #ffd866; }
+    .logo__block:hover.green {
+      background-color: #a9dc76; }
+    .logo__block:hover.blue {
+      background-color: #78dce8; }
+    .logo__block:hover.purple {
+      background-color: #ab9df2; }
+  .logo__block.background {
+    background-color: #272822; }
+  .logo__block.text {
+    background-color: #fdf9f3; }
