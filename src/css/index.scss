@@ -1,3 +1,4 @@
 @import 'custom/base';
-@import 'custom/header';
-@import 'custom/logo';
+@import 'custom/functions';
+@import 'custom/mixins';
+@import 'custom/*.scss';

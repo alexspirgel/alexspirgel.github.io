@@ -1,9 +1,11 @@
 const gulp = require('gulp');
 const gulpSass = require('gulp-sass');
+const gulpSassGlob = require('gulp-sass-glob');
 
 gulp.task('sass', () => {
   return gulp.src('./src/css/index.scss')
     .pipe(gulpSass().on('error', gulpSass.logError))
+    .pipe(gulpSassGlob())
     .pipe(gulp.dest('./dist/css'));
 });
 
