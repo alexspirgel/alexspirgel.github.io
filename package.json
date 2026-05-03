@@ -4,7 +4,9 @@
   "description": "My personal portfolio.",
   "main": "index.js",
   "scripts": {
-    "build": "concurrently \"webpack\" \"gulp\""
+    "scripts": "esbuild ./scripts/src/header.js ./scripts/src/footer.js --outdir=./scripts/dist/ --bundle --minify --sourcemap --watch",
+    "styles": "sass ./styles/src/index.scss ./styles/dist/styles.css --style=compressed --watch",
+    "build": "concurrently --kill-others --raw \"npm run scripts\" \"npm run styles\""
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,12 @@
   },
   "homepage": "https://github.com/alexspirgel/alexspirgel.github.io#readme",
   "devDependencies": {
-    "concurrently": "^5.3.0",
-    "gulp": "^4.0.2",
-    "gulp-sass": "^4.1.0",
-    "gulp-sass-glob": "^1.1.0",
-    "node-sass": "^4.14.1",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "concurrently": "^9.2.1",
+    "esbuild": "0.28.0",
+    "sass": "^1.99.0"
+  },
+  "dependencies": {
+    "@alexspirgel/no-scroll": "^1.0.2",
+    "micromodal": "^0.6.1"
   }
 }

@@ -1,0 +1,29 @@
+@use './abstracts/all' as *;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--primary-color-2);
+}
+
+.main {
+	padding-top: rem(20px);
+	padding-bottom: rem(20px);
+}
+
+.h2 {
+	@include content-max-size();
+	font-family: $ubuntu;
+	font-size: rem(35px);
+	text-align: center;
+	color: var(--secondary-color-2);
+}
+
+.footer {
+	padding: rem(10px);
+	background-color: var(--secondary-color-2);
+}

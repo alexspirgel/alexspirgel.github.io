@@ -1,0 +1,43 @@
+@use './abstracts/all' as *;
+
+.header {
+	display: flex;
+	padding: 5px;
+	background-color: var(--secondary-color-2);
+	.logo {
+		display: block;
+	}
+	.logo__svg {
+		display: block;
+		width: 45px;
+		height: 45px;
+		.text {
+			fill: var(--secondary-color-2);
+		}
+		.background {
+			fill: var(--primary-color-2);
+		}
+	}
+	.navigation__items {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+	.navigation__link {
+		display: block;
+		padding: 10px;
+	}
+	.theme {
+		&__toggle-button {
+			border-width: 1px;
+			border-style: solid;
+			border-color: var(--primary-color-2);
+			border-radius: rem(50%);
+			padding: rem(5px);
+			color: var(--primary-color-2);
+			background: transparent;
+			cursor: pointer;
+		}
+	}
+}

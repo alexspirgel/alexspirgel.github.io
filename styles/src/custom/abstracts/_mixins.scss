@@ -1,0 +1,10 @@
+@use './functions-and-variables' as *;
+
+@mixin content-max-size() {
+	width: 100%;
+	max-width: $content-max-width;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--content-padding);
+	padding-right: var(--content-padding);
+}

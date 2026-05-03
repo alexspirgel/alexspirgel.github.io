@@ -1,0 +1,302 @@
+@use './abstracts/all' as *;
+@use '../vendor/no-scroll.min.css' as *;
+
+$card-shadow-size: rem(10px);
+
+.portfolio {
+	&__list-wrapper {
+		@include content-max-size();
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: #{rem(32px) - $card-shadow-size};
+		margin: 0;
+		margin-top: -$card-shadow-size;
+		margin-left: -$card-shadow-size;
+		padding: 0;
+		list-style: none;
+		@media screen and (max-width: rem(800px)) {
+			grid-template-columns: 1fr;
+		}
+		@media screen and (max-width: bp(medium-large)) {
+			gap: #{rem(24px) - $card-shadow-size};
+		}
+		@media screen and (max-width: bp(small-medium)) {
+			gap: #{rem(16px) - $card-shadow-size};
+		}
+	}
+	&__item {
+		overflow: hidden;
+	}
+}
+
+.card {
+	$component-selector: &;
+	$hover-transition-duration: 0.15s;
+	$active-transition-duration: 0.05s;
+	position: relative;
+	display: block;
+	margin-top: $card-shadow-size;
+	margin-left: $card-shadow-size;
+	border: 0;
+	padding: 0;
+	width: calc(100% - $card-shadow-size);
+	height: calc(100% - $card-shadow-size);
+	text-align: left;
+	text-decoration: none;
+	appearance: none;
+	background: none;
+	cursor: pointer;
+	transition-property: transform;
+	transition-duration: $hover-transition-duration;
+	transition-timing-function: linear;
+	&:hover,
+	&:focus {
+		outline: none;
+		transform: translate(-$card-shadow-size, -$card-shadow-size);
+	}
+	&:active {
+		transform: translate(rem(-5px), rem(-5px));
+		transition-duration: $active-transition-duration;
+		transition-timing-function: ease;
+	}
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: rem(20px);
+		border-width: 1px;
+		border-style: solid;
+		border-color: $color-red;
+		padding: rem(20px);
+		height: 100%;
+		background-color: var(--primary-color-2);
+		overflow: hidden;
+		z-index: 2;
+		&::after {
+			content: "";
+			position: absolute;
+			bottom: rem(-18px);
+			right: rem(-18px);
+			width: rem(36px);
+			height: rem(36px);
+			background-color: $color-red;
+			transform: rotate(45deg);
+			transform-origin: center;
+			transition-property: bottom, right;
+			transition-duration: $hover-transition-duration;
+			transition-timing-function: linear;
+			#{$component-selector}:hover &,
+			#{$component-selector}:focus & {
+				bottom: rem(-36px);
+				right: rem(-36px);
+			}
+		}
+		img {
+			display: block;
+			width: rem(150px);
+			height: rem(150px);
+		}
+		h1 {
+			margin: 0;
+			color: var(--secondary-color-2);
+			font-family: $ubuntu;
+			font-size: rem(28px);
+			font-weight: 700;
+			text-decoration: underline;
+			text-decoration-color: transparent;
+			text-decoration-thickness: 1px;
+			text-underline-offset: rem(5px);
+			transition-property: text-decoration-color;
+			transition-duration: $hover-transition-duration;
+			#{$component-selector}:hover &,
+			#{$component-selector}:focus & {
+				text-decoration-color: var(--secondary-color-2);
+			}
+		}
+		p {
+			margin: 0;
+			margin-top: rem(10px);
+			font-family: $open-sans;
+			font-size: rem(16px);
+			font-weight: 400;
+			color: var(--secondary-color-2);
+		}
+	}
+	&__shadow {
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: -$card-shadow-size;
+		right: -$card-shadow-size;
+		background-color: $color-red;
+		z-index: 1;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0 0 0 0;
+		}
+		&::before {
+			right: 100%;
+			bottom: 0;
+			border-width: 0 $card-shadow-size $card-shadow-size 0;
+			border-color: transparent $color-red transparent transparent;
+		}
+		&::after {
+			right: 0;
+			bottom: 100%;
+			border-width: $card-shadow-size 0 0 $card-shadow-size;
+			border-color: transparent transparent transparent $color-red;
+		}
+	}
+	&__shadow-line {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: block;
+		width: 1px;
+		height: $card-shadow-size * 1.5;
+		background-color: var(--primary-color-2);
+		transform: rotate(-45deg);
+		transform-origin: 100% 100%;
+	}
+}
+
+/**************************\
+  Basic Modal Styles
+\**************************/
+
+.modal {
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: var(--content-padding);
+	z-index: 5;
+	&__overlay {
+		position: absolute;
+		display: block;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: var(--color-overlay);
+		backdrop-filter: blur(5px);
+		z-index: 1;
+	}
+	&__content {
+		position: relative;
+		border: 1px solid $color-red;
+		padding: rem(30px);
+		max-width: rem(800px);
+		max-height: 100%;
+		background-color: var(--primary-color-1);
+		overflow-y: auto;
+		z-index: 2;
+	}
+	&__header {
+		position: sticky;
+		top: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__title {
+		margin-top: 0;
+		margin-bottom: 0;
+		font-size: rem(24px);
+		color: var(--secondary-color-2);
+	}
+	&__close {
+		position: relative;
+		display: block;
+		border: 0;
+		padding: 0;
+		width: rem(20px);
+		height: rem(20px);
+		background: transparent;
+		cursor: pointer;
+		&::before,
+		&::after {
+			content: "";
+			position: absolute;
+			display: block;
+			top: 50%;
+			left: 50%;
+			width: rem(20px);
+			height: rem(3px);
+			transform-origin: center;
+			background-color: var(--secondary-color-2);
+		}
+		&::before {
+			transform: translate(-50%, -50%) rotate(45deg);
+		}
+		&::after {
+			transform: translate(-50%, -50%) rotate(-45deg);
+		}
+	}
+}
+
+
+
+/**************************\
+  Demo Animation Style
+\**************************/
+@keyframes mmfadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
+@keyframes mmslideIn {
+  from { transform: translateY(15%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes mmslideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10%); }
+}
+
+.micromodal-slide {
+  display: none;
+}
+
+.micromodal-slide.is-open {
+  display: flex;
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__overlay {
+  animation: mmfadeIn .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="false"] .modal__container {
+  animation: mmslideIn .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__overlay {
+  animation: mmfadeOut .3s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+.micromodal-slide[aria-hidden="true"] .modal__container {
+  animation: mmslideOut .3s cubic-bezier(0, 0, .2, 1);
+}
+
+.micromodal-slide .modal__container,
+.micromodal-slide .modal__overlay {
+  will-change: transform;
+}

@@ -1,0 +1,81 @@
+@use 'sass:math';
+@use 'sass:map';
+
+@function stripUnit($value) {
+	@return math.div($value, ($value * 0 + 1));
+}
+
+@function rem($px-value) {
+  @return math.div(stripUnit($px-value), stripUnit(16px)) * 1rem;
+}
+
+@function line-height($line-height, $font-size) {
+	@if (unit($line-height) == unit($font-size)) {
+		@return math.div($line-height, $font-size);
+	}
+	@else {
+		@error '$line-height and $font-size parameters must have the same unit type.';
+	}
+}
+
+$breakpoints: (
+	small:        rem(384px),
+	small-medium: rem(576px),
+	medium:       rem(768px),
+	medium-large: rem(1024px),
+	large:        rem(1280px),
+	large-huge:   rem(1600px),
+	huge:         rem(1920px),
+);
+
+@function bp($breakpoint) {
+	@return map.get($breakpoints, $breakpoint);
+}
+
+$content-max-width: rem(1280px);
+
+$color-light-1: #ffffff;
+$color-light-2: #fdf9f3;
+$color-light-3: #eae7e2;
+$color-light-3-overlay: rgba(234, 231, 226, 0.6);
+
+$color-dark-1: #1d1e18;
+$color-dark-2: #272822;
+$color-dark-3: #3a3b33;
+$color-dark-3-overlay: rgba(58, 59, 51, 0.6);
+
+$color-red: #ff6188;
+$color-orange: #fc9867;
+$color-yellow: #ffd866;
+$color-green: #a9dc76;
+$color-blue: #78dce8;
+$color-purple: #ab9df2;
+
+$ubuntu: 'Ubuntu', 'Tahoma', sans-serif;
+$open-sans: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+
+:root {
+	--content-padding: #{rem(32px)};
+	@media screen and (max-width: bp(medium-large)) {
+		--content-padding: #{rem(24px)};
+	}
+	@media screen and (max-width: bp(small-medium)) {
+		--content-padding: #{rem(16px)};
+	}
+	--primary-color-1: #{$color-light-1};
+	--primary-color-2: #{$color-light-2};
+	--primary-color-3: #{$color-light-3};
+	--secondary-color-1: #{$color-dark-1};
+	--secondary-color-2: #{$color-dark-2};
+	--secondary-color-3: #{$color-dark-3};
+	--color-overlay: #{$color-light-3-overlay};
+	&[data-theme="dark"] {
+		--primary-color-1: #{$color-dark-1};
+		--primary-color-2: #{$color-dark-2};
+		--primary-color-3: #{$color-dark-3};
+		--secondary-color-1: #{$color-light-1};
+		--secondary-color-2: #{$color-light-2};
+		--secondary-color-3: #{$color-light-3};
+		--color-overlay: #{$color-dark-3-overlay};
+	}
+}

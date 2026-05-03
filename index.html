@@ -9,32 +9,122 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16.png">
 		<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32.png">
 		<link rel="icon" type="image/png" sizes="64x64" href="assets/images/favicon/favicon-64.png">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap">
-		<link rel="stylesheet" href="dist/css/index.css">
+		<link rel="stylesheet" href="styles/dist/styles.css">
+		<script type="text/javascript" src="scripts/dist/header.js"></script>
 	</head>
 	<body>
+
 		<header class="header">
-			<div class="logo">
-				<a class="logo__link" href="/">
-					<img class="logo__svg" src="assets/images/logo.svg">
-					<div class="logo__blocks"></div>
-				</a>
+			<a class="logo" href="/">
+				<svg class="logo__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve">
+					<polygon class="text" points="250,200 250,150 150,150 150,100 300,100 300,250 400,250 400,300 300,300 300,350 250,350 250,250 150,250 150,350 100,350 100,150 150,150 150,200 "/>
+					<rect class="text" x="350" y="150" width="100" height="50"/>
+					<rect class="background" x="150" y="150" width="100" height="50"/>
+					<path class="background" d="M450,150V0H0v450h450V200H350v-50H450z M400,250v50H300v50h-50V250H150v100h-50V150h50v-50h150v150H400z"/>
+				</svg>
+			</a>
+			<nav class="navigation">
+				<ul class="navigation__items">
+					<li class="navigation__item">
+						<a class="navigation__link" href="#about">About</a>
+					</li>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#portfolio">Portfolio</a>
+					</li>
+					<li class="navigation__item">
+						<a class="navigation__link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="theme">
+				<button class="theme__toggle-button">Light/Dark Mode Toggle</button>
 			</div>
 		</header>
-		<main>
-			<h1>Website Under Construction</h1>
-			<p>You can contact me here: <a href="mailto:spirgel.alexander@gmail.com">spirgel.alexander@gmail.com</a></p>
-			<a class="card" href="#">
-				<div class="card__wrapper">
-					<div class="card__text">This is some example content</div>
+
+		<main class="main">
+			<h1>🚧 Website Under Construction 🚧</h1>
+			<section class="about" id="about">
+				<h2 class="h2">About</h2>
+				<p><a href="#">View my résumé</a></p>
+			</section>
+			<section class="portfolio" id="portfolio">
+				<h2 class="h2">Portfolio</h2>
+				<p></p>
+				<div class="portfolio__list-wrapper">
+					<ul class="portfolio__list">
+						<li class="portfolio__item">
+							<button class="card" data-micromodal-trigger="modal-pg">
+								<article class="card__content">
+									<img src="assets/images/portfolio/penn-global.webp">
+									<div class="card__text">
+										<h1>Penn Global</h1>
+										<p>A framework for University of Pennsylvania sites.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+							<div class="modal micromodal-slide" id="modal-pg" aria-hidden="true">
+								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+								<div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-pg-title">
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-pg-title">Penn Global</h2>
+										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</header>
+									<main class="modal__main">
+										<p>View some of the sites included in the framework:</p>
+										<ul>
+											<li><a href="https://global.upenn.edu">Penn Global</a></li>
+											<li><a href="https://global.upenn.edu/isss">International Student & Scholar Services</a></li>
+											<li><a href="https://global.upenn.edu/pennabroad">Penn Abroad</a></li>
+											<li><a href="https://global.upenn.edu/gss">Global Support Services</a></li>
+											<li><a href="https://global.upenn.edu/finance-administration">Finance & Administration</a></li>
+											<li><a href="https://srfs.upenn.edu">Student Registration & FInancial Services</a></li>
+										</ul>
+									</main>
+									<footer class="modal__footer">
+										<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
+									</footer>
+								</div>
+							</div>
+						</li>
+						<li class="portfolio__item">
+							<button class="card">
+								<article class="card__content">
+									<img src="assets/images/portfolio/transition-auto.webp">
+									<div class="card__text">
+										<h1>Transition Auto</h1>
+										<p>A JavaScript function enabling element width and height transitions to and from auto.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+						</li>
+						<li class="portfolio__item">
+							<button class="card">
+								<article class="card__content">
+									<img src="assets/images/portfolio/no-scroll.webp">
+									<div class="card__text">
+										<h1>No Scroll</h1>
+										<p>A JavaScript utility for disabling and re-enabling scroll without causing layout shift.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+						</li>
+					</ul>
 				</div>
-				<div class="card__box"><div class="card__box-line"></div></div>
-			</a>
+			</section>
+			<section class="contact" id="contact">
+				<h2 class="h2">Contact</h2>
+				<p><a href="mailto:spirgel.alexander@gmail.com">spirgel.alexander@gmail.com</a></p>
+			</section>
 		</main>
+
 		<footer class="footer">
 			<p>&copy; <script>document.write(new Date().getFullYear());</script> Alexander Spirgel<p>
 		</footer>
-		<script type="text/javascript" src="dist/js/index.js"></script>
+
+		<script type="text/javascript" src="scripts/dist/footer.js"></script>
+
 	</body>
 </html>
