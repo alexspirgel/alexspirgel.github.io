@@ -1,20 +1,4 @@
-function waitForElement(selector) {
-	return new Promise((resolve) => {
-		if (document.querySelector(selector)) {
-			return resolve(document.querySelector(selector));
-		}
-		const observer = new MutationObserver((mutations) => {
-			if (document.querySelector(selector)) {
-				observer.disconnect();
-				resolve(document.querySelector(selector));
-			}
-		});
-		observer.observe(document.documentElement, {
-			childList: true,
-			subtree: true,
-		});
-	});
-}
+import waitForElement from './wait-for-element.js';
 
 function getTheme() {
 	return document.documentElement.getAttribute('data-theme');
@@ -40,6 +24,6 @@ else {
 	setTheme('light');
 }
 
-waitForElement('.theme__toggle-button').then((element) => {
+waitForElement('.header-theme-toggle__button').then((element) => {
 	element.addEventListener('click', toggleTheme);
 });

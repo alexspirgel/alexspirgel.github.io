@@ -15,29 +15,48 @@
 	<body>
 
 		<header class="header">
-			<a class="logo" href="/">
-				<svg class="logo__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve">
+			<a class="header-logo" href="/">
+				<svg class="header-logo__svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 450 450" xml:space="preserve">
 					<polygon class="text" points="250,200 250,150 150,150 150,100 300,100 300,250 400,250 400,300 300,300 300,350 250,350 250,250 150,250 150,350 100,350 100,150 150,150 150,200 "/>
 					<rect class="text" x="350" y="150" width="100" height="50"/>
 					<rect class="background" x="150" y="150" width="100" height="50"/>
 					<path class="background" d="M450,150V0H0v450h450V200H350v-50H450z M400,250v50H300v50h-50V250H150v100h-50V150h50v-50h150v150H400z"/>
 				</svg>
 			</a>
-			<nav class="navigation">
-				<ul class="navigation__items">
-					<li class="navigation__item">
-						<a class="navigation__link" href="#about">About</a>
+			<nav class="header-navigation">
+				<button class="header-navigation__toggle" aria-label="toggle menu">
+					<span class="header-navigation__toggle-bar"></span>
+				</button>
+				<ul class="header-navigation__items">
+					<li class="header-navigation__item">
+						<a class="header-navigation__link" href="#about">About</a>
 					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#portfolio">Portfolio</a>
+					<li class="header-navigation__item">
+						<a class="header-navigation__link" href="#portfolio">Portfolio</a>
 					</li>
-					<li class="navigation__item">
-						<a class="navigation__link" href="#contact">Contact</a>
+					<li class="header-navigation__item">
+						<a class="header-navigation__link" href="#contact">Contact</a>
 					</li>
 				</ul>
 			</nav>
-			<div class="theme">
-				<button class="theme__toggle-button">Light/Dark Mode Toggle</button>
+			<div class="header-theme-toggle">
+				<button class="header-theme-toggle__button" aria-label="light/dark mode toggle">
+					<svg class="icon-light" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+						<path class="sun" fill-rule="evenodd" d="m50 80c-16.59 0-30-13.41-30-30 0-16.59 13.41-30 30-30 16.59 0 30 13.41 30 30 0 16.59-13.41 30-30 30zm24-30c0-13.27-10.73-24-24-24-13.27 0-24 10.73-24 24 0 13.27 10.73 24 24 24 13.27 0 24-10.73 24-24z"/>
+						<path class="sun-fill" fill-rule="evenodd" d="m50 77c-14.93 0-27-12.07-27-27 0-14.93 12.07-27 27-27 14.93 0 27 12.07 27 27 0 14.93-12.07 27-27 27z"/>
+						<path class="light-ray-1" d="m47 3c0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3-1.66 0-3-1.34-3-3zm0 10c0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3-1.66 0-3-1.34-3-3zm6 0h-6v-10h6z"/>
+						<path class="light-ray-2" d="m81.11 14.64c1.18-1.17 3.07-1.17 4.25 0 1.17 1.18 1.17 3.07 0 4.25-1.18 1.17-3.07 1.17-4.25 0-1.17-1.18-1.17-3.07 0-4.25zm-7.07 7.08c1.17-1.18 3.07-1.18 4.24 0 1.18 1.17 1.18 3.07 0 4.24-1.17 1.17-3.07 1.17-4.24 0-1.17-1.17-1.17-3.07 0-4.24zm4.24 4.24l-4.24-4.24 7.07-7.08 4.25 4.25z"/>
+						<path class="light-ray-3" d="m87 53c-1.66 0-3-1.34-3-3 0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3zm10 0c-1.66 0-3-1.34-3-3 0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3zm0-6v6h-10v-6z"/>
+						<path class="light-ray-4" d="m74.04 78.28c-1.17-1.17-1.17-3.07 0-4.24 1.17-1.17 3.07-1.17 4.24 0 1.18 1.17 1.18 3.07 0 4.24-1.17 1.18-3.07 1.18-4.24 0zm7.07 7.08c-1.17-1.18-1.17-3.07 0-4.25 1.18-1.17 3.07-1.17 4.25 0 1.17 1.18 1.17 3.07 0 4.25-1.18 1.17-3.07 1.17-4.25 0zm4.25-4.25l-4.25 4.25-7.07-7.08 4.24-4.24z"/>
+						<path class="light-ray-5" d="m47 87c0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3-1.66 0-3-1.34-3-3zm0 10c0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3-1.66 0-3-1.34-3-3zm6 0h-6v-10h6z"/>
+						<path class="light-ray-6" d="m21.72 74.04c1.17-1.17 3.07-1.17 4.24 0 1.17 1.17 1.17 3.07 0 4.24-1.17 1.18-3.07 1.18-4.24 0-1.18-1.17-1.18-3.07 0-4.24zm-7.08 7.07c1.18-1.17 3.07-1.17 4.25 0 1.17 1.18 1.17 3.07 0 4.25-1.18 1.17-3.07 1.17-4.25 0-1.17-1.18-1.17-3.07 0-4.25zm4.25 4.25l-4.25-4.25 7.08-7.07 4.24 4.24z"/>
+						<path class="light-ray-7" d="m3 53c-1.66 0-3-1.34-3-3 0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3zm10 0c-1.66 0-3-1.34-3-3 0-1.66 1.34-3 3-3 1.66 0 3 1.34 3 3 0 1.66-1.34 3-3 3zm0-6v6h-10v-6z"/>
+						<path class="light-ray-8" d="m14.64 18.89c-1.17-1.18-1.17-3.07 0-4.25 1.18-1.17 3.07-1.17 4.25 0 1.17 1.18 1.17 3.07 0 4.25-1.18 1.17-3.07 1.17-4.25 0zm7.08 7.07c-1.18-1.17-1.18-3.07 0-4.24 1.17-1.18 3.07-1.18 4.24 0 1.17 1.17 1.17 3.07 0 4.24-1.17 1.17-3.07 1.17-4.24 0zm4.24-4.24l-4.24 4.24-7.08-7.07 4.25-4.25z"/>
+					</svg>
+					<svg class="icon-dark" version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+						<path stroke="black" paint-order="stroke fill markers" stroke-linejoin="round" stroke-width="4" d="m50 90c-22.12 0-40-17.88-40-40 0-20.16 14.84-36.79 34.22-39.59-7.49 6.42-12.22 15.94-12.22 26.59 0 19.36 15.64 35 35 35 7.31 0 14.1-2.23 19.71-6.06-6.15 14.17-20.26 24.06-36.71 24.06z"/>
+					</svg>
+				</button>
 			</div>
 		</header>
 
@@ -73,12 +92,12 @@
 									<main class="modal__main">
 										<p>View some of the sites included in the framework:</p>
 										<ul>
-											<li><a href="https://global.upenn.edu">Penn Global</a></li>
-											<li><a href="https://global.upenn.edu/isss">International Student & Scholar Services</a></li>
-											<li><a href="https://global.upenn.edu/pennabroad">Penn Abroad</a></li>
-											<li><a href="https://global.upenn.edu/gss">Global Support Services</a></li>
-											<li><a href="https://global.upenn.edu/finance-administration">Finance & Administration</a></li>
-											<li><a href="https://srfs.upenn.edu">Student Registration & FInancial Services</a></li>
+											<li><a href="https://global.upenn.edu" target="_blank">Penn Global</a></li>
+											<li><a href="https://global.upenn.edu/isss" target="_blank">International Student & Scholar Services</a></li>
+											<li><a href="https://global.upenn.edu/pennabroad" target="_blank">Penn Abroad</a></li>
+											<li><a href="https://global.upenn.edu/gss" target="_blank">Global Support Services</a></li>
+											<li><a href="https://global.upenn.edu/finance-administration" target="_blank">Finance & Administration</a></li>
+											<li><a href="https://srfs.upenn.edu" target="_blank">Student Registration & FInancial Services</a></li>
 										</ul>
 									</main>
 									<footer class="modal__footer">

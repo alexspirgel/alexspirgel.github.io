@@ -20,6 +20,7 @@
 
 $breakpoints: (
 	small:        rem(384px),
+	mobile-nav:   rem(400px),
 	small-medium: rem(576px),
 	medium:       rem(768px),
 	medium-large: rem(1024px),
@@ -38,11 +39,13 @@ $color-light-1: #ffffff;
 $color-light-2: #fdf9f3;
 $color-light-3: #eae7e2;
 $color-light-3-overlay: rgba(234, 231, 226, 0.6);
+$color-light-4: #d9d5ce;
 
 $color-dark-1: #1d1e18;
 $color-dark-2: #272822;
 $color-dark-3: #3a3b33;
 $color-dark-3-overlay: rgba(58, 59, 51, 0.6);
+$color-dark-4: #4a4b44;
 
 $color-red: #ff6188;
 $color-orange: #fc9867;
@@ -53,6 +56,8 @@ $color-purple: #ab9df2;
 
 $ubuntu: 'Ubuntu', 'Tahoma', sans-serif;
 $open-sans: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
+
+$theme-transition-duration: 0.35s;
 
 :root {
 	--content-padding: #{rem(32px)};
@@ -65,17 +70,21 @@ $open-sans: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 	--primary-color-1: #{$color-light-1};
 	--primary-color-2: #{$color-light-2};
 	--primary-color-3: #{$color-light-3};
+	--primary-color-4: #{$color-light-4};
 	--secondary-color-1: #{$color-dark-1};
 	--secondary-color-2: #{$color-dark-2};
 	--secondary-color-3: #{$color-dark-3};
+	--secondary-color-4: #{$color-dark-4};
 	--color-overlay: #{$color-light-3-overlay};
 	&[data-theme="dark"] {
 		--primary-color-1: #{$color-dark-1};
 		--primary-color-2: #{$color-dark-2};
 		--primary-color-3: #{$color-dark-3};
+		--primary-color-4: #{$color-dark-4};
 		--secondary-color-1: #{$color-light-1};
 		--secondary-color-2: #{$color-light-2};
 		--secondary-color-3: #{$color-light-3};
+		--secondary-color-4: #{$color-light-4};
 		--color-overlay: #{$color-dark-3-overlay};
 	}
 }

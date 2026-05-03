@@ -24,6 +24,12 @@ body {
 }
 
 .footer {
-	padding: rem(10px);
-	background-color: var(--secondary-color-2);
+	padding: rem(8px);
+	background-color: var(--primary-color-1);
+	border-top-width: 2px;
+	border-top-style: solid;
+	border-top-color: var(--secondary-color-4);
+	transition-property: background-color, border-top-color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
 }

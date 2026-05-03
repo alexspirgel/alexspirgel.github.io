@@ -2,42 +2,193 @@
 
 .header {
 	display: flex;
-	padding: 5px;
-	background-color: var(--secondary-color-2);
-	.logo {
+	gap: rem(8px);
+	padding: rem(8px);
+	background-color: var(--primary-color-1);
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: var(--secondary-color-4);
+	transition-property: background-color, border-bottom-color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
+}
+.header-logo {
+	display: block;
+	&__svg {
 		display: block;
-	}
-	.logo__svg {
-		display: block;
-		width: 45px;
-		height: 45px;
+		width: 36px;
+		height: 36px;
 		.text {
-			fill: var(--secondary-color-2);
+			fill: var(--primary-color-2);
+			transition-property: fill;
+			transition-duration: $theme-transition-duration;
+			transition-timing-function: linear;
 		}
 		.background {
-			fill: var(--primary-color-2);
+			fill: var(--secondary-color-2);
+			transition-property: fill;
+			transition-duration: $theme-transition-duration;
+			transition-timing-function: linear;
 		}
 	}
-	.navigation__items {
+}
+.header-navigation {
+	$navigation-selector: &;
+	@media screen and (max-width: bp(mobile-nav)) {
+		order: 3;
+	}
+	&__toggle {
+		position: relative;
+		display: none;
+		width: rem(34px);
+		height: rem(34px);
+		border: 0;
+		padding: 0;
+		background-color: transparent;
+		cursor: pointer;
+		@media screen and (max-width: bp(mobile-nav)) {
+			display: block;
+		}
+		&::before,
+		&-bar,
+		&::after {
+			position: absolute;
+			left: 50%;
+			display: block;
+			width: 20px;
+			height: 3px;
+			background-color: red;
+		}
+		&::before {
+			content: "";
+			top: 0;
+			transform: translateX(-50%);
+		}
+		&-bar {
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+		&::after {
+			content: "";
+			bottom: 0;
+			transform: translateX(-50%);
+		}
+	}
+	&__items {
 		display: flex;
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		@media screen and (max-width: bp(mobile-nav)) {
+			display: none;
+			position: absolute;
+			top: rem(54px);
+			left: 0;
+			width: 100%;
+			background-color: red;
+			#{$navigation-selector}[data-state="opened"] & {
+				display: block;
+			}
+		}
 	}
-	.navigation__link {
+	&__link {
 		display: block;
 		padding: 10px;
+		text-decoration: underline;
+		text-decoration-thickness: 1px;
+		text-decoration-style: solid;
+		text-underline-offset: rem(4px);
+		text-decoration-color: transparent;
+		color: var(--secondary-color-2);
+		transition:
+			text-decoration-color 0.25s ease,
+			color $theme-transition-duration linear;
+		&:hover,
+		&:focus {
+			text-decoration-color: var(--secondary-color-2);
+		}
 	}
-	.theme {
-		&__toggle-button {
+}
+.header-theme-toggle {
+	width: 100%;
+	text-align: right;
+	@media screen and (max-width: bp(mobile-nav)) {
+		order: 2;
+	}
+	&__button {
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: rem(16px);
+		border-width: 1px;
+		border-style: solid;
+		border-color: var(--secondary-color-2);
+		border-radius: rem(50%);
+		padding: rem(8px);
+		color: var(--secondary-color-2);
+		background: var(--primary-color-4);
+		cursor: pointer;
+		transition-property: border-color, color, background;
+		transition-duration: $theme-transition-duration;
+		transition-timing-function: linear;
+		&:active::before {
+			width: rem(33px);
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			left: rem(2px);
+			right: auto;
+			display: block;
+			width: rem(26px);
+			height: rem(26px);
 			border-width: 1px;
 			border-style: solid;
-			border-color: var(--primary-color-2);
-			border-radius: rem(50%);
-			padding: rem(5px);
-			color: var(--primary-color-2);
-			background: transparent;
-			cursor: pointer;
+			border-color: var(--secondary-color-1);
+			border-radius: rem(26px);
+			background-color: var(--primary-color-1);
+			transition:
+				width 0.25s ease,
+				left $theme-transition-duration ease,
+				transform $theme-transition-duration ease,
+				border-color $theme-transition-duration linear,
+				background-color $theme-transition-duration linear;
+			:root[data-theme="dark"] & {
+				left: rem(62px);
+				transform: translateX(-100%);
+			}
+		}
+		svg {
+			position: relative;
+			width: rem(16px);
+			height: rem(16px);
+			&.icon-light {
+				path {
+					fill: $color-yellow;
+				}
+				.sun-fill {
+					fill: $color-yellow;
+					transition-property: fill;
+					transition-duration: $theme-transition-duration;
+					transition-timing-function: linear;
+					:root[data-theme="dark"] & {
+						fill: transparent;
+					}
+				}
+			}
+			&.icon-dark {
+				path {
+					fill: transparent;
+					stroke: var(--secondary-color-2);
+					transition-property: fill;
+					transition-duration: $theme-transition-duration;
+					transition-timing-function: linear;
+					:root[data-theme="dark"] & {
+						fill: var(--secondary-color-2);
+					}
+				}
+			}
 		}
 	}
 }
