@@ -8,6 +8,9 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--primary-color-2);
+	transition-property: background-color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
 }
 
 .main {
@@ -21,10 +24,14 @@ body {
 	font-size: rem(35px);
 	text-align: center;
 	color: var(--secondary-color-2);
+	transition-property: color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
 }
 
 .footer {
-	padding: rem(8px);
+	padding-top: rem(8px);
+	padding-bottom: rem(8px);
 	background-color: var(--primary-color-1);
 	border-top-width: 2px;
 	border-top-style: solid;
@@ -32,4 +39,14 @@ body {
 	transition-property: background-color, border-top-color;
 	transition-duration: $theme-transition-duration;
 	transition-timing-function: linear;
+	p {
+		@include content-max-size();
+		font-family: $open-sans;
+		font-size: rem(16px);
+		color: var(--secondary-color-2);
+		text-align: center;
+		transition-property: color;
+		transition-duration: $theme-transition-duration;
+		transition-timing-function: linear;
+	}
 }

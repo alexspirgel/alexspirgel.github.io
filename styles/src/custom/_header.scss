@@ -2,7 +2,7 @@
 
 .header {
 	display: flex;
-	gap: rem(8px);
+	gap: rem(16px);
 	padding: rem(8px);
 	background-color: var(--primary-color-1);
 	border-bottom-width: 2px;
@@ -34,48 +34,180 @@
 }
 .header-navigation {
 	$navigation-selector: &;
+	display: flex;
+	align-items: center;
 	@media screen and (max-width: bp(mobile-nav)) {
 		order: 3;
 	}
 	&__toggle {
-		position: relative;
 		display: none;
-		width: rem(34px);
-		height: rem(34px);
-		border: 0;
-		padding: 0;
+		width: rem(36px);
+		height: rem(36px);
+		border-width: 1px;
+		border-style: solid;
+		border-color: var(--secondary-color-2);
+		border-radius: 50%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 8px;
+		padding-right: 8px;
 		background-color: transparent;
 		cursor: pointer;
 		@media screen and (max-width: bp(mobile-nav)) {
 			display: block;
 		}
-		&::before,
+		&-inner {
+			position: relative;
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		&-inner::before,
 		&-bar,
-		&::after {
+		&-inner::after {
 			position: absolute;
 			left: 50%;
 			display: block;
-			width: 20px;
-			height: 3px;
-			background-color: red;
+			width: 100%;
+			height: 2px;
+			border-radius: 2px;
+			background-color: var(--secondary-color-2);
+			transform-origin: center;
+			transition-property: opacity;
+			transition-duration: 0.25s;
+			transition-timing-function: linear;
+			animation-duration: 0.25s;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
 		}
-		&::before {
+		&-inner::before {
 			content: "";
 			top: 0;
 			transform: translateX(-50%);
+			@keyframes hamburger-top-to-x {
+				0% {
+					height: 2px;
+					top: 0;
+					transform: translateX(-50%);
+				}
+				25% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+				66% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+				100% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+			}
+			#{$navigation-selector}[data-state="opened"] & {
+				// height: 3px;
+				// top: 50%;
+				// transform: translate(-50%, -50%) rotate(45deg);
+				animation-name: hamburger-top-to-x;
+			}
+			@keyframes hamburger-x-to-top {
+				0% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+				33% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+				75% {
+					height: 3px;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+				100% {
+					height: 2px;
+					top: 0;
+					transform: translateX(-50%);
+				}
+			}
+			#{$navigation-selector}[data-state="closed"] & {
+				animation-name: hamburger-x-to-top;
+			}
 		}
 		&-bar {
 			top: 50%;
 			transform: translate(-50%, -50%);
+			opacity: 1;
+			#{$navigation-selector}[data-state="opened"] & {
+				opacity: 0;
+			}
 		}
-		&::after {
+		&-inner::after {
 			content: "";
 			bottom: 0;
 			transform: translateX(-50%);
+			@keyframes hamburger-bottom-to-x {
+				0% {
+					height: 2px;
+					bottom: 0;
+					transform: translateX(-50%);
+				}
+				25% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%);
+				}
+				66% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%);
+				}
+				100% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%) rotate(-45deg);
+				}
+			}
+			#{$navigation-selector}[data-state="opened"] & {
+				// height: 3px;
+				// bottom: 50%;
+				// transform: translate(-50%, 50%) rotate(-45deg);
+				animation-name: hamburger-bottom-to-x;
+			}
+			@keyframes hamburger-x-to-bottom {
+				0% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%) rotate(-45deg);
+				}
+				33% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%);
+				}
+				75% {
+					height: 3px;
+					bottom: 50%;
+					transform: translate(-50%, 50%);
+				}
+				100% {
+					height: 2px;
+					bottom: 0;
+					transform: translateX(-50%);
+				}
+			}
+			#{$navigation-selector}[data-state="closed"] & {
+				animation-name: hamburger-x-to-bottom;
+			}
 		}
 	}
 	&__items {
 		display: flex;
+		gap: rem(8px);
 		margin: 0;
 		padding: 0;
 		list-style: none;
@@ -85,7 +217,7 @@
 			top: rem(54px);
 			left: 0;
 			width: 100%;
-			background-color: red;
+			background-color: var(--primary-color-4);
 			#{$navigation-selector}[data-state="opened"] & {
 				display: block;
 			}
@@ -93,16 +225,23 @@
 	}
 	&__link {
 		display: block;
-		padding: 10px;
+		padding: rem(6px);
+		font-family: $ubuntu;
+		font-size: rem(20px);
+		line-height: 1;
 		text-decoration: underline;
 		text-decoration-thickness: 1px;
 		text-decoration-style: solid;
 		text-underline-offset: rem(4px);
 		text-decoration-color: transparent;
+		text-align: center;
 		color: var(--secondary-color-2);
 		transition:
 			text-decoration-color 0.25s ease,
 			color $theme-transition-duration linear;
+		@media screen and (max-width: bp(mobile-nav)) {
+			padding: rem(10px);
+		}
 		&:hover,
 		&:focus {
 			text-decoration-color: var(--secondary-color-2);
@@ -133,7 +272,7 @@
 		transition-duration: $theme-transition-duration;
 		transition-timing-function: linear;
 		&:active::before {
-			width: rem(33px);
+			width: rem(35px);
 		}
 		&::before {
 			content: "";
@@ -141,12 +280,12 @@
 			left: rem(2px);
 			right: auto;
 			display: block;
-			width: rem(26px);
-			height: rem(26px);
+			width: rem(28px);
+			height: rem(28px);
 			border-width: 1px;
 			border-style: solid;
 			border-color: var(--secondary-color-1);
-			border-radius: rem(26px);
+			border-radius: rem(28px);
 			background-color: var(--primary-color-1);
 			transition:
 				width 0.25s ease,
@@ -155,14 +294,14 @@
 				border-color $theme-transition-duration linear,
 				background-color $theme-transition-duration linear;
 			:root[data-theme="dark"] & {
-				left: rem(62px);
+				left: rem(66px);
 				transform: translateX(-100%);
 			}
 		}
 		svg {
 			position: relative;
-			width: rem(16px);
-			height: rem(16px);
+			width: rem(18px);
+			height: rem(18px);
 			&.icon-light {
 				path {
 					fill: $color-yellow;
