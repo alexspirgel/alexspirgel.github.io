@@ -74,7 +74,7 @@
 				<div class="portfolio__list-wrapper">
 					<ul class="portfolio__list">
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-pg">
+							<button class="card" data-micromodal-trigger="modal-pg" data-color="red">
 								<article class="card__content">
 									<img src="assets/images/portfolio/penn-global.webp" alt="Penn Global website">
 									<div class="card__text">
@@ -84,7 +84,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-pg" aria-hidden="true">
+							<div class="modal" id="modal-pg" aria-hidden="true" data-color="red">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-pg-title">
 									<div class="modal__close-wrapper">
@@ -113,7 +113,7 @@
 							</div>
 						</li>
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-es">
+							<button class="card" data-micromodal-trigger="modal-es" data-color="blue">
 								<article class="card__content">
 									<img src="assets/images/portfolio/eastern-standard.webp" alt="Eastern Standard website">
 									<div class="card__text">
@@ -123,7 +123,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-es" aria-hidden="true">
+							<div class="modal" id="modal-es" aria-hidden="true" data-color="blue">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-es-title">
 									<div class="modal__close-wrapper">
@@ -156,37 +156,7 @@
 							</div>
 						</li>
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-ta">
-								<article class="card__content">
-									<img src="assets/images/portfolio/transition-auto.webp" alt="transition auto github repository website">
-									<div class="card__text">
-										<h1>Transition Auto</h1>
-										<p>A JavaScript function enabling element width and height transitions to and from auto.</p>
-									</div>
-								</article>
-								<div class="card__shadow"><div class="card__shadow-line"></div></div>
-							</button>
-							<div class="modal" id="modal-ta" aria-hidden="true">
-								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
-								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ta-title">
-									<div class="modal__close-wrapper">
-										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-									</div>
-									<header class="modal__header">
-										<h2 class="modal__title" id="modal-ta-title" tabindex="0">Transition Auto</h2>
-									</header>
-									<main class="modal__main">
-										<hr>
-										<p>I have often times found myself wanting to transition an element's dimensions to and from 'auto'. This comes up when opening an element with an unknown height like an accordion or a navigation. I built this JavaScript utility to handle this use case.</p>
-										<p>It works by first calculating what the dimension of the element would be at 'auto', then sets the element to that value enabling CSS transitions. Then it waits for the transition to complete before setting the element to 'auto'.</p>
-										<div class="modal__ctas"><a data-button-color="purple" data-button-icon="new-window" href="https://github.com/alexspirgel/transition-auto" target="_blank">View The Repository</a><a data-button-color="purple" data-button-icon="new-window" href="https://alexanderspirgel.com/transition-auto/demo" target="_blank">View The Demo</a></div>
-										<hr>
-									</main>
-								</article>
-							</div>
-						</li>
-						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-ns">
+							<button class="card" data-micromodal-trigger="modal-ns" data-color="purple">
 								<article class="card__content">
 									<img src="assets/images/portfolio/no-scroll.webp" alt="No Scroll github repository website">
 									<div class="card__text">
@@ -196,7 +166,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-ns" aria-hidden="true">
+							<div class="modal" id="modal-ns" aria-hidden="true" data-color="purple">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ns-title">
 									<div class="modal__close-wrapper">
@@ -215,14 +185,46 @@
 								</article>
 							</div>
 						</li>
+						<li class="portfolio__item">
+							<button class="card" data-micromodal-trigger="modal-ta" data-color="orange">
+								<article class="card__content">
+									<img src="assets/images/portfolio/transition-auto.webp" alt="transition auto github repository website">
+									<div class="card__text">
+										<h1>Transition Auto</h1>
+										<p>A JavaScript function enabling element width and height transitions to and from auto.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+							<div class="modal" id="modal-ta" aria-hidden="true" data-color="orange">
+								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ta-title">
+									<div class="modal__close-wrapper">
+										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</div>
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-ta-title" tabindex="0">Transition Auto</h2>
+									</header>
+									<main class="modal__main">
+										<hr>
+										<p>I have often times found myself wanting to transition an element's dimensions to and from 'auto'. This comes up when opening an element with an unknown height like an accordion or a navigation. I built this JavaScript utility to handle this use case.</p>
+										<p>It works by first calculating what the dimension of the element would be at 'auto', then sets the element to that value enabling CSS transitions. Then it waits for the transition to complete before setting the element to 'auto'.</p>
+										<div class="modal__ctas"><a data-button-color="orange" data-button-icon="new-window" href="https://github.com/alexspirgel/transition-auto" target="_blank">View The Repository</a><a data-button-color="orange" data-button-icon="new-window" href="https://alexanderspirgel.com/transition-auto/demo" target="_blank">View The Demo</a></div>
+										<hr>
+									</main>
+								</article>
+							</div>
+						</li>
 					</ul>
 				</div>
 			</section>
 			<section class="contact" id="contact">
 				<h2 class="h2">Contact</h2>
 				<p>If you would like to get in touch, you can email me at: spirgel.alexander@gmail.com</p>
-				<a data-button-color="green" data-button-icon="arrow" href="mailto:spirgel.alexander@gmail.com">Email</a>
-				<a data-button-color="blue" data-button-icon="new-window" href="https://www.linkedin.com/in/alexanderspirgel" target="_blank">LinkedIn</a>
+				<div class="contact__buttons">
+					<a data-button-color="green" data-button-icon="arrow" href="mailto:spirgel.alexander@gmail.com">Email</a>
+					<a data-button-color="blue" data-button-icon="new-window" href="https://www.linkedin.com/in/alexanderspirgel" target="_blank">LinkedIn</a>
+				</div>
 			</section>
 		</main>
 

@@ -6,7 +6,7 @@ $card-shadow-size: rem(10px);
 .portfolio {
 	padding-top: rem(48px);
 	padding-bottom: rem(60px);
-	background-color: var(--primary-color-2);
+	background-color: var(--primary-color-1);
 	transition-property: background-color;
 	transition-duration: $theme-transition-duration;
 	transition-timing-function: linear;
@@ -77,12 +77,18 @@ $card-shadow-size: rem(10px);
 		border-color: $color-red;
 		padding: rem(20px);
 		height: 100%;
-		background-color: var(--primary-color-2);
+		background-color: var(--primary-color-1);
 		transition-property: background-color;
 		transition-duration: $theme-transition-duration;
 		transition-timing-function: linear;
 		overflow: hidden;
 		z-index: 2;
+		#{$component-selector}[data-color="red"] & {border-color: $color-red;}
+		#{$component-selector}[data-color="orange"] & {border-color: $color-orange;}
+		#{$component-selector}[data-color="yellow"] & {border-color: $color-yellow;}
+		#{$component-selector}[data-color="green"] & {border-color: $color-green;}
+		#{$component-selector}[data-color="blue"] & {border-color: $color-blue;}
+		#{$component-selector}[data-color="purple"] & {border-color: $color-purple;}
 		&::after {
 			content: "";
 			position: absolute;
@@ -96,6 +102,12 @@ $card-shadow-size: rem(10px);
 			transition-property: bottom, right;
 			transition-duration: $hover-transition-duration;
 			transition-timing-function: linear;
+			#{$component-selector}[data-color="red"] & {background-color: $color-red;}
+			#{$component-selector}[data-color="orange"] & {background-color: $color-orange;}
+			#{$component-selector}[data-color="yellow"] & {background-color: $color-yellow;}
+			#{$component-selector}[data-color="green"] & {background-color: $color-green;}
+			#{$component-selector}[data-color="blue"] & {background-color: $color-blue;}
+			#{$component-selector}[data-color="purple"] & {background-color: $color-purple;}
 			#{$component-selector}:hover &,
 			#{$component-selector}:focus & {
 				bottom: rem(-36px);
@@ -146,6 +158,12 @@ $card-shadow-size: rem(10px);
 		right: -$card-shadow-size;
 		background-color: $color-red;
 		z-index: 1;
+		#{$component-selector}[data-color="red"] & {background-color: $color-red;}
+		#{$component-selector}[data-color="orange"] & {background-color: $color-orange;}
+		#{$component-selector}[data-color="yellow"] & {background-color: $color-yellow;}
+		#{$component-selector}[data-color="green"] & {background-color: $color-green;}
+		#{$component-selector}[data-color="blue"] & {background-color: $color-blue;}
+		#{$component-selector}[data-color="purple"] & {background-color: $color-purple;}
 		&::before,
 		&::after {
 			content: "";
@@ -160,12 +178,24 @@ $card-shadow-size: rem(10px);
 			bottom: 0;
 			border-width: 0 $card-shadow-size $card-shadow-size 0;
 			border-color: transparent $color-red transparent transparent;
+			#{$component-selector}[data-color="red"] & {border-right-color: $color-red;}
+			#{$component-selector}[data-color="orange"] & {border-right-color: $color-orange;}
+			#{$component-selector}[data-color="yellow"] & {border-right-color: $color-yellow;}
+			#{$component-selector}[data-color="green"] & {border-right-color: $color-green;}
+			#{$component-selector}[data-color="blue"] & {border-right-color: $color-blue;}
+			#{$component-selector}[data-color="purple"] & {border-right-color: $color-purple;}
 		}
 		&::after {
 			right: 0;
 			bottom: 100%;
 			border-width: $card-shadow-size 0 0 $card-shadow-size;
 			border-color: transparent transparent transparent $color-red;
+			#{$component-selector}[data-color="red"] & {border-left-color: $color-red;}
+			#{$component-selector}[data-color="orange"] & {border-left-color: $color-orange;}
+			#{$component-selector}[data-color="yellow"] & {border-left-color: $color-yellow;}
+			#{$component-selector}[data-color="green"] & {border-left-color: $color-green;}
+			#{$component-selector}[data-color="blue"] & {border-left-color: $color-blue;}
+			#{$component-selector}[data-color="purple"] & {border-left-color: $color-purple;}
 		}
 	}
 	&__shadow-line {
@@ -185,7 +215,7 @@ $card-shadow-size: rem(10px);
 }
 
 .modal {
-	$modal-selector: &;
+	$component-selector: &;
 	position: fixed;
 	display: none;
 	justify-content: center;
@@ -239,10 +269,10 @@ $card-shadow-size: rem(10px);
 		backdrop-filter: blur(5px);
 		will-change: transform;
 		z-index: 1;
-		#{$modal-selector}[aria-hidden="false"] & {
+		#{$component-selector}[aria-hidden="false"] & {
 			animation: fadeIn 0.25s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
-		#{$modal-selector}[aria-hidden="true"] & {
+		#{$component-selector}[aria-hidden="true"] & {
 			animation: fadeOut 0.25s cubic-bezier(0.0, 0.0, 0.2, 1);
 		}
 	}
@@ -256,10 +286,16 @@ $card-shadow-size: rem(10px);
 		overflow-y: auto;
 		will-change: transform;
 		z-index: 2;
-		#{$modal-selector}[aria-hidden="false"] & {
+		#{$component-selector}[data-color="red"] & {border-color: $color-red;}
+		#{$component-selector}[data-color="orange"] & {border-color: $color-orange;}
+		#{$component-selector}[data-color="yellow"] & {border-color: $color-yellow;}
+		#{$component-selector}[data-color="green"] & {border-color: $color-green;}
+		#{$component-selector}[data-color="blue"] & {border-color: $color-blue;}
+		#{$component-selector}[data-color="purple"] & {border-color: $color-purple;}
+		#{$component-selector}[aria-hidden="false"] & {
 			animation: slideIn 0.25s cubic-bezier(0, 0, .2, 1);
 		}
-		#{$modal-selector}[aria-hidden="true"] & {
+		#{$component-selector}[aria-hidden="true"] & {
 			animation: slideOut 0.25s cubic-bezier(0, 0, .2, 1);
 		}
 	}
@@ -279,10 +315,16 @@ $card-shadow-size: rem(10px);
 		height: rem(200px);
 		background: $color-red;
 		transform: rotate(45deg);
-		cursor: pointer;
 		transition-property: top, left;
 		transition-duration: 0.25s;
 		transition-timing-function: ease;
+		cursor: pointer;
+		#{$component-selector}[data-color="red"] & {background: $color-red;}
+		#{$component-selector}[data-color="orange"] & {background: $color-orange;}
+		#{$component-selector}[data-color="yellow"] & {background: $color-yellow;}
+		#{$component-selector}[data-color="green"] & {background: $color-green;}
+		#{$component-selector}[data-color="blue"] & {background: $color-blue;}
+		#{$component-selector}[data-color="purple"] & {background: $color-purple;}
 		&:hover,
 		&:focus {
 			top: rem(-134px);
@@ -417,12 +459,7 @@ $card-shadow-size: rem(10px);
 		}
 	}
 	&__ctas {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		column-gap: rem(16px);
-		row-gap: rem(24px);
-		flex-wrap: wrap;
+		@include buttons-wrapper();
 		margin-top: rem(24px);
 	}
 }

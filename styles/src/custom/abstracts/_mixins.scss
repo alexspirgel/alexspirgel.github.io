@@ -107,3 +107,12 @@
 		}
 	}
 }
+
+@mixin buttons-wrapper() {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: rem(20px);
+	row-gap: rem(24px);
+	flex-wrap: wrap;
+}

@@ -32,11 +32,11 @@ body {
 .about {
 	padding-top: rem(40px);
 	padding-bottom: rem(18px);
-	background-color: var(--primary-color-3);
+	background-color: var(--primary-color-2);
 	transition-property: background-color;
 	transition-duration: $theme-transition-duration;
 	transition-timing-function: linear;
-	p, a {
+	p {
 		@include content-max-size();
 		max-width: rem(1000px);
 		font-family: $open-sans;
@@ -78,10 +78,26 @@ body {
 .contact {
 	padding-top: rem(40px);
 	padding-bottom: rem(40px);
-	background-color: var(--primary-color-3);
+	background-color: var(--primary-color-2);
 	transition-property: background-color;
 	transition-duration: $theme-transition-duration;
 	transition-timing-function: linear;
+	p {
+		@include content-max-size();
+		max-width: rem(1000px);
+		font-family: $open-sans;
+		font-size: rem(18px);
+		text-align: center;
+		line-height: 1.5;
+		color: var(--secondary-color-2);
+		transition-property: color;
+		transition-duration: $theme-transition-duration;
+		transition-timing-function: linear;
+	}
+	&__buttons {
+		@include buttons-wrapper();
+		margin-top: rem(24px);
+	}
 }
 
 .footer {
