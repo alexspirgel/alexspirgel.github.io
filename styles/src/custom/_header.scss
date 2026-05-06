@@ -16,8 +16,8 @@
 	display: block;
 	&__svg {
 		display: block;
-		width: 36px;
-		height: 36px;
+		width: rem(36px);
+		height: rem(36px);
 		.text {
 			fill: var(--primary-color-2);
 			transition-property: fill;
@@ -47,10 +47,10 @@
 		border-style: solid;
 		border-color: var(--secondary-color-2);
 		border-radius: 50%;
-		padding-top: 10px;
-		padding-bottom: 10px;
-		padding-left: 8px;
-		padding-right: 8px;
+		padding-top: rem(10px);
+		padding-bottom: rem(10px);
+		padding-left: rem(8px);
+		padding-right: rem(8px);
 		background-color: transparent;
 		cursor: pointer;
 		@media screen and (max-width: bp(mobile-nav)) {

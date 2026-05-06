@@ -8,3 +8,112 @@
 	padding-left: var(--content-padding);
 	padding-right: var(--content-padding);
 }
+
+@mixin button($color, $icon: 'arrow') {
+	position: relative;
+	display: inline-flex;
+	gap: rem(10px);
+	width: auto;
+	margin: rem(16px);
+	padding: rem(18px);
+	border-width: 1px;
+	border-style: solid;
+	border-color: $color;
+	font-family: $open-sans;
+	font-size: rem(16px);
+	line-height: 1;
+	color: var(--secondary-color-2);
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	text-underline-offset: rem(7px);
+	background-color: transparent;
+	transition:
+		text-decoration-color 0.25s ease,
+		color $theme-transition-duration linear;
+	cursor: pointer;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -12px;
+		right: -12px;
+		display: block;
+		width: 22px;
+		height: 22px;
+		transform: rotate(45deg);
+		background-color: $color;
+		clip-path: polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%, 50% 50%, 100% 100%);
+		// transition-property: clip-path;
+		// transition-duration: 0.25s;
+		// transition-timing-function: ease;
+		animation-name: collapse;
+		animation-duration: 0.125s;
+		animation-timing-function: linear;
+		animation-fill-mode: forwards;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		@if $icon == 'download' {
+			top: -8px;
+		}
+		@else {
+			top: -7px;
+		}
+		right: -7px;
+		display: block;
+		width: rem(12px);
+		height: rem(12px);
+		background-color: var(--secondary-color-2);
+		mask-image: url('../../assets/icons/button-#{$icon}.svg');
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: rem(12px) rem(12px);
+		opacity: 0;
+		transition-property: opacity;
+		transition-duration: 0.125s;
+		transition-timing-function: ease;
+	}
+	&:hover,
+	&:focus {
+		text-decoration-color: var(--secondary-color-2);
+		&::before {
+			animation-name: expand;
+		}
+		&::after {
+			opacity: 1;
+			transition-delay: 0.125s;
+		}
+	}
+	svg {
+		width: rem(18px);
+		height: rem(18px);
+		path {
+			fill: var(--secondary-color-2);
+			transition-property: fill;
+			transition-duration: $theme-transition-duration;
+			transition-timing-function: linear;
+		}
+	}
+	@keyframes expand {
+		0% {
+			clip-path: polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%, 50% 50%, 100% 100%);
+		}
+		50% {
+			clip-path: polygon(100% 50%, 100% 100%, 0% 100%, 0% 50%, 50% 50%, 50% 50%, 50% 50%);
+		}
+		100% {
+			clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 50% 0%, 50% 0%, 50% 0%);
+		}
+	}
+	@keyframes collapse {
+		0% {
+			clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0%, 50% 0%, 50% 0%, 50% 0%);
+		}
+		50% {
+			clip-path: polygon(100% 50%, 100% 100%, 0% 100%, 0% 50%, 50% 50%, 50% 50%, 50% 50%);
+		}
+		100% {
+			clip-path: polygon(100% 100%, 100% 100%, 0% 100%, 0% 100%, 0% 100%, 50% 50%, 100% 100%);
+		}
+	}
+}

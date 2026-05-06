@@ -65,7 +65,8 @@
 		<main class="main">
 			<section class="about" id="about">
 				<h2 class="h2">About</h2>
-				<p><a href="#">View my résumé</a></p>
+				<p>Hello! My name is Alex Spirgel and I'm a senior web developer with specializations in custom WordPress & Drupal development, technical communications, and requirements gathering & documentation. I have years of experience speaking directly to technical and non-technical stakeholders alike, then turning those discussions into detailed development plans for myself or others to execute.</p>
+				<p><a data-button-color="purple" data-button-icon="new-window" href="#">View My Résumé</a></p>
 			</section>
 			<section class="portfolio" id="portfolio">
 				<h2 class="h2">Portfolio</h2>
@@ -75,7 +76,7 @@
 						<li class="portfolio__item">
 							<button class="card" data-micromodal-trigger="modal-pg">
 								<article class="card__content">
-									<img src="assets/images/portfolio/penn-global.webp">
+									<img src="assets/images/portfolio/penn-global.webp" alt="Penn Global website">
 									<div class="card__text">
 										<h1>Penn Global</h1>
 										<p>A framework for University of Pennsylvania sites.</p>
@@ -83,15 +84,21 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal micromodal-slide" id="modal-pg" aria-hidden="true">
+							<div class="modal" id="modal-pg" aria-hidden="true">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
-								<div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-pg-title">
-									<header class="modal__header">
-										<h2 class="modal__title" id="modal-pg-title">Penn Global</h2>
+								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-pg-title">
+									<div class="modal__close-wrapper">
 										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</div>
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-pg-title" tabindex="0">Penn Global</h2>
 									</header>
 									<main class="modal__main">
-										<p>View some of the sites included in the framework:</p>
+										<hr>
+										<img class="float-right-33" src="assets/images/portfolio/penn-global.webp" alt="Penn Global website">
+										<p>I led the development of a set of new sites for the University of Pennsylvania. They required a system that allowed for multiple sites to co-exist in the same Drupal installation without being in a Drupal multisite configuration. To accomplish this, I implemented a taxonomy-based sub-site system. Individual pages could be tagged with the appropriate taxonomy to include them in the desired sub-site.</p>
+										<p>Additionally, the new sites had considerable design overlap, so I implemented an inter-theme code sharing framework that allowed sub-sites to branch from a main theme. This system went on to be used in the future to quickly build new University of Pennsylvania websites with similar design overlap.</p>
+										<p>Some of the sites included in the framework:</p>
 										<ul>
 											<li><a href="https://global.upenn.edu" target="_blank">Penn Global</a></li>
 											<li><a href="https://global.upenn.edu/isss" target="_blank">International Student & Scholar Services</a></li>
@@ -100,11 +107,52 @@
 											<li><a href="https://global.upenn.edu/finance-administration" target="_blank">Finance & Administration</a></li>
 											<li><a href="https://srfs.upenn.edu" target="_blank">Student Registration & FInancial Services</a></li>
 										</ul>
+										<hr>
 									</main>
-									<footer class="modal__footer">
-										<button class="modal__btn" data-micromodal-close aria-label="Close this dialog window">Close</button>
-									</footer>
-								</div>
+								</article>
+							</div>
+						</li>
+						<li class="portfolio__item">
+							<button class="card" data-micromodal-trigger="modal-es">
+								<article class="card__content">
+									<img src="assets/images/portfolio/eastern-standard.webp" alt="Eastern Standard website">
+									<div class="card__text">
+										<h1>Eastern Standard Frameworks</h1>
+										<p>A framework for University of Pennsylvania sites.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+							<div class="modal" id="modal-es" aria-hidden="true">
+								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-es-title">
+									<div class="modal__close-wrapper">
+										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</div>
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-es-title" tabindex="0">Eastern Standard Web Frameworks</h2>
+									</header>
+									<main class="modal__main">
+										<hr>
+										<p>While working at Eastern Standard I developed both Wordpress and Drupal frameworks to streamline development efforts across the team.</p>
+										<p>Some of the code specific benefits of the frameworks are:</p>
+										<ul>
+											<li>Single-folder components</li>
+											<li>Common template base components</li>
+											<li>Pre-configured build tooling</li>
+											<li>Commonly used utility functions</li>
+											<li>Compatibility polyfills</li>
+											<li>Custom plugins/modules</li>
+											<li>Standardized code architecture</li>
+											<li>Defined git workflow</li>
+										</ul>
+										<p>The frameworks are more than code, they are integrated into Eastern Standard's workflow process. I led meetings where we brought together the leads from design, user experience, and development to discuss changes and improvements to the frameworks. I built an Airtable to organize our project requirements into one central location. I also wrote documentation for developers and non-developers explaining functionality and how they could use the frameworks in their roles.</p>
+										<img class="float-right-33" src="assets/images/portfolio/eastern-standard.webp" alt="Penn Global website">
+										<p>Over the years I witnessed other developers attempt to create frameworks that would increase efficiency through a shared system, but all failed to achieve adoption because they were not easy to implement or strayed too far from existing processes. Through these experiences I learned how important ease of adoption is. When I had the chance to implement a system of my own, I focused on the user experience for my colleagues. This was key to the success of my frameworks.</p>
+										<p>These frameworks have been in use for years and continue to be the foundation of most projects at Eastern Standard continually gaining efficiency for the team.</p>
+										<hr>
+									</main>
+								</article>
 							</div>
 						</li>
 						<li class="portfolio__item">
@@ -136,7 +184,8 @@
 			</section>
 			<section class="contact" id="contact">
 				<h2 class="h2">Contact</h2>
-				<p><a href="mailto:spirgel.alexander@gmail.com">spirgel.alexander@gmail.com</a></p>
+				<a data-button-color="green" data-button-icon="arrow" href="mailto:spirgel.alexander@gmail.com">spirgel.alexander@gmail.com</a>
+				<a data-button-color="blue" data-button-icon="new-window" href="https://www.linkedin.com/in/alexanderspirgel" target="_blank">LinkedIn</a>
 			</section>
 		</main>
 

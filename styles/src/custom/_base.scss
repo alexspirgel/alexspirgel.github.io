@@ -13,10 +13,7 @@ body {
 	transition-timing-function: linear;
 }
 
-.main {
-	padding-top: rem(20px);
-	padding-bottom: rem(20px);
-}
+// .main {}
 
 .h2 {
 	@include content-max-size();
@@ -25,6 +22,64 @@ body {
 	text-align: center;
 	color: var(--secondary-color-2);
 	transition-property: color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.about {
+	padding-top: rem(40px);
+	padding-bottom: rem(18px);
+	background-color: var(--primary-color-3);
+	transition-property: background-color;
+	transition-duration: $theme-transition-duration;
+	transition-timing-function: linear;
+	p, a {
+		@include content-max-size();
+		max-width: rem(1000px);
+		font-family: $open-sans;
+		font-size: rem(18px);
+		text-align: center;
+		line-height: 1.5;
+		color: var(--secondary-color-2);
+		transition-property: color;
+		transition-duration: $theme-transition-duration;
+		transition-timing-function: linear;
+	}
+}
+
+[data-button-icon="arrow"] {
+	&[data-button-color="red"] {@include button($color-red, 'arrow');}
+	&[data-button-color="orange"] {@include button($color-orange, 'arrow');}
+	&[data-button-color="yellow"] {@include button($color-yellow, 'arrow');}
+	&[data-button-color="green"] {@include button($color-green, 'arrow');}
+	&[data-button-color="blue"] {@include button($color-blue, 'arrow');}
+	&[data-button-color="purple"] {@include button($color-purple, 'arrow');}
+}
+[data-button-icon="new-window"] {
+	&[data-button-color="red"] {@include button($color-red, 'new-window');}
+	&[data-button-color="orange"] {@include button($color-orange, 'new-window');}
+	&[data-button-color="yellow"] {@include button($color-yellow, 'new-window');}
+	&[data-button-color="green"] {@include button($color-green, 'new-window');}
+	&[data-button-color="blue"] {@include button($color-blue, 'new-window');}
+	&[data-button-color="purple"] {@include button($color-purple, 'new-window');}
+}
+[data-button-icon="download"] {
+	&[data-button-color="red"] {@include button($color-red, 'download');}
+	&[data-button-color="orange"] {@include button($color-orange, 'download');}
+	&[data-button-color="yellow"] {@include button($color-yellow, 'download');}
+	&[data-button-color="green"] {@include button($color-green, 'download');}
+	&[data-button-color="blue"] {@include button($color-blue, 'download');}
+	&[data-button-color="purple"] {@include button($color-purple, 'download');}
+}
+
+.contact {
+	padding-top: rem(40px);
+	padding-bottom: rem(40px);
+	background-color: var(--primary-color-3);
+	transition-property: background-color;
 	transition-duration: $theme-transition-duration;
 	transition-timing-function: linear;
 }

@@ -3,7 +3,12 @@ const noScroll = require('@alexspirgel/no-scroll');
 
 MicroModal.init({
 	disableScroll: true,
+	awaitCloseAnimation: true,
 	onShow: (modal) => {
+		const title = modal.querySelector('.modal__title');
+		if (title) {
+			title.removeAttribute('tabindex'); // removed so the text is not actually tabbable
+		}
 		noScroll.disableScroll({
 			outerElement: document.documentElement,
 			innerElement: document.body,
@@ -11,6 +16,10 @@ MicroModal.init({
 		});
 	},
 	onClose: (modal) => {
+		const title = modal.querySelector('.modal__title');
+		if (title) {
+			title.setAttribute('tabindex', '0'); // added so modal is scrolled to the top when opened
+		}
 		noScroll.enableScroll({
 			outerElement: document.documentElement,
 			innerElement: document.body,
@@ -18,15 +27,3 @@ MicroModal.init({
 		});
 	},
 });
-// MicroModal.init({
-// 	onShow: modal => console.info(`${modal.id} is shown`), // [1]
-// 	onClose: modal => console.info(`${modal.id} is hidden`), // [2]
-// 	openTrigger: 'data-custom-open', // [3]
-// 	closeTrigger: 'data-custom-close', // [4]
-// 	openClass: 'is-open', // [5]
-// 	disableScroll: true, // [6]
-// 	disableFocus: false, // [7]
-// 	awaitOpenAnimation: false, // [8]
-// 	awaitCloseAnimation: false, // [9]
-// 	debugMode: true // [10]
-// });
