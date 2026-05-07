@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@alexspirgel/no-scroll": "^1.0.2",
+    "@alexspirgel/transition-auto": "^2.0.6",
     "micromodal": "^0.6.1"
   }
 }

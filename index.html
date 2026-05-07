@@ -23,23 +23,25 @@
 					<path class="background" d="M450,150V0H0v450h450V200H350v-50H450z M400,250v50H300v50h-50V250H150v100h-50V150h50v-50h150v150H400z"/>
 				</svg>
 			</a>
-			<nav class="header-navigation">
+			<nav class="header-navigation" data-state="closed">
 				<button class="header-navigation__toggle" aria-label="toggle menu">
 					<div class="header-navigation__toggle-inner">
 						<span class="header-navigation__toggle-bar"></span>
 					</div>
 				</button>
-				<ul class="header-navigation__items">
-					<li class="header-navigation__item">
-						<a class="header-navigation__link" href="#about">About</a>
-					</li>
-					<li class="header-navigation__item">
-						<a class="header-navigation__link" href="#portfolio">Portfolio</a>
-					</li>
-					<li class="header-navigation__item">
-						<a class="header-navigation__link" href="#contact">Contact</a>
-					</li>
-				</ul>
+				<div class="header-navigation__items-wrapper">
+					<ul class="header-navigation__items">
+						<li class="header-navigation__item">
+							<a class="header-navigation__link" href="#about">About</a>
+						</li>
+						<li class="header-navigation__item">
+							<a class="header-navigation__link" href="#portfolio">Portfolio</a>
+						</li>
+						<li class="header-navigation__item">
+							<a class="header-navigation__link" href="#contact">Contact</a>
+						</li>
+					</ul>
+				</div>
 			</nav>
 			<div class="header-theme-toggle">
 				<button class="header-theme-toggle__button" aria-label="light/dark mode toggle">
@@ -66,7 +68,7 @@
 			<section class="about" id="about">
 				<h2 class="h2">About</h2>
 				<p>Hello! My name is Alex Spirgel and I'm a senior web developer with specializations in custom WordPress & Drupal development, technical communications, and requirements gathering & documentation. I have years of experience speaking directly to technical and non-technical stakeholders alike, then turning those discussions into detailed development plans for myself or others to execute.</p>
-				<p><a data-button-color="purple" data-button-icon="new-window" href="#">View My Résumé</a></p>
+				<!-- <p><a data-button-color="purple" data-button-icon="new-window" href="#">View My Résumé</a></p> -->
 			</section>
 			<section class="portfolio" id="portfolio">
 				<h2 class="h2">Portfolio</h2>

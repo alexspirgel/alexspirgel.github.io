@@ -106,6 +106,7 @@
 					transform: translate(-50%, -50%) rotate(45deg);
 				}
 			}
+			#{$navigation-selector}[data-state="opening"] &,
 			#{$navigation-selector}[data-state="opened"] & {
 				// height: 3px;
 				// top: 50%;
@@ -134,6 +135,7 @@
 					transform: translateX(-50%);
 				}
 			}
+			#{$navigation-selector}[data-state="closing"] &,
 			#{$navigation-selector}[data-state="closed"] & {
 				animation-name: hamburger-x-to-top;
 			}
@@ -142,6 +144,7 @@
 			top: 50%;
 			transform: translate(-50%, -50%);
 			opacity: 1;
+			#{$navigation-selector}[data-state="opening"] &,
 			#{$navigation-selector}[data-state="opened"] & {
 				opacity: 0;
 			}
@@ -172,6 +175,7 @@
 					transform: translate(-50%, 50%) rotate(-45deg);
 				}
 			}
+			#{$navigation-selector}[data-state="opening"] &,
 			#{$navigation-selector}[data-state="opened"] & {
 				// height: 3px;
 				// bottom: 50%;
@@ -200,8 +204,40 @@
 					transform: translateX(-50%);
 				}
 			}
+			#{$navigation-selector}[data-state="closing"] &,
 			#{$navigation-selector}[data-state="closed"] & {
 				animation-name: hamburger-x-to-bottom;
+			}
+		}
+	}
+	&__items-wrapper {
+		overflow: hidden;
+		@media screen and (max-width: bp(mobile-nav)) {
+			position: absolute;
+			top: rem(54px);
+			left: 0;
+			width: 100%;
+			background-color: var(--primary-color-4);
+			opacity: 0;
+			visibility: hidden;
+			transition-property: height, opacity, visibility;
+			transition-duration: 0.25s;
+			transition-timing-function: ease;
+			#{$navigation-selector}[data-state="opening"] &,
+			#{$navigation-selector}[data-state="opened"] & {
+				opacity: 1;
+				visibility: visible;
+			}
+			#{$navigation-selector}[data-state="opened"] & {
+				display: block;
+			}
+			#{$navigation-selector}[data-state="closing"] &,
+			#{$navigation-selector}[data-state="closed"] & {
+				opacity: 0;
+				visibility: hidden;
+			}
+			#{$navigation-selector}[data-state="closed"] & {
+				display: none;
 			}
 		}
 	}
@@ -212,15 +248,8 @@
 		padding: 0;
 		list-style: none;
 		@media screen and (max-width: bp(mobile-nav)) {
-			display: none;
-			position: absolute;
-			top: rem(54px);
-			left: 0;
-			width: 100%;
-			background-color: var(--primary-color-4);
-			#{$navigation-selector}[data-state="opened"] & {
-				display: block;
-			}
+			display: block;
+			overflow: auto;
 		}
 	}
 	&__link {
@@ -241,6 +270,7 @@
 			color $theme-transition-duration linear;
 		@media screen and (max-width: bp(mobile-nav)) {
 			padding: rem(10px);
+			border-bottom: 1px solid var(--secondary-color-4);
 		}
 		&:hover,
 		&:focus {
