@@ -89,6 +89,10 @@ $card-shadow-size: rem(10px);
 		#{$component-selector}[data-color="green"] & {border-color: $color-green;}
 		#{$component-selector}[data-color="blue"] & {border-color: $color-blue;}
 		#{$component-selector}[data-color="purple"] & {border-color: $color-purple;}
+		@media screen and (max-width: bp(small-medium)) {
+			display: block;
+			text-align: center;
+		}
 		&::after {
 			content: "";
 			position: absolute;
@@ -118,6 +122,12 @@ $card-shadow-size: rem(10px);
 			display: block;
 			width: rem(150px);
 			height: rem(150px);
+			@media screen and (max-width: bp(small-medium)) {
+				width: rem(125px);
+				height: rem(125px);
+				margin: auto;
+				margin-bottom: rem(16px);
+			}
 		}
 		h1 {
 			margin: 0;
