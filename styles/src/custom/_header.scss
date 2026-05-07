@@ -52,6 +52,9 @@
 		padding-left: rem(8px);
 		padding-right: rem(8px);
 		background-color: transparent;
+		transition-property: border-color;
+		transition-duration: $theme-transition-duration;
+		transition-timing-function: linear;
 		cursor: pointer;
 		@media screen and (max-width: bp(mobile-nav)) {
 			display: block;
@@ -73,9 +76,9 @@
 			border-radius: 2px;
 			background-color: var(--secondary-color-2);
 			transform-origin: center;
-			transition-property: opacity;
-			transition-duration: 0.25s;
-			transition-timing-function: linear;
+			transition:
+				opacity 0.25s linear,
+				background-color $theme-transition-duration linear;
 			animation-duration: 0.25s;
 			animation-timing-function: linear;
 			animation-fill-mode: forwards;
@@ -229,7 +232,7 @@
 				visibility: visible;
 			}
 			#{$navigation-selector}[data-state="opened"] & {
-				display: block;
+				height: auto;
 			}
 			#{$navigation-selector}[data-state="closing"] &,
 			#{$navigation-selector}[data-state="closed"] & {
@@ -237,7 +240,7 @@
 				visibility: hidden;
 			}
 			#{$navigation-selector}[data-state="closed"] & {
-				display: none;
+				height: 0;
 			}
 		}
 	}
@@ -350,7 +353,7 @@
 				path {
 					fill: transparent;
 					stroke: var(--secondary-color-2);
-					transition-property: fill;
+					transition-property: fill, stroke;
 					transition-duration: $theme-transition-duration;
 					transition-timing-function: linear;
 					:root[data-theme="dark"] & {

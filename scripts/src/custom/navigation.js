@@ -1,7 +1,7 @@
 import waitForElement from './wait-for-element.js';
 const transitionAuto = require('@alexspirgel/transition-auto');
 
-function isMobilveNavigation() {
+function isMobileNavigation() {
 	return (window.matchMedia && window.matchMedia('(max-width: 400px)').matches);
 }
 
@@ -12,36 +12,40 @@ function getNavigationState() {
 
 function setNavigationState(state) {
 	if (state == 'opened') {
-		document.querySelector('.header-navigation').setAttribute('data-state', 'opening');
 		transitionAuto({
 			element: document.querySelector('.header-navigation__items-wrapper'),
 			property: 'height',
 			value: 'auto',
-			onComplete: () => {
+			onComplete: (options) => {
 				document.querySelector('.header-navigation').setAttribute('data-state', 'opened');
+				options.element.style.height = '';
 			}
 		});
+		document.querySelector('.header-navigation').setAttribute('data-state', 'opening');
 	}
 	else {
-		document.querySelector('.header-navigation').setAttribute('data-state', 'closing');
 		transitionAuto({
 			element: document.querySelector('.header-navigation__items-wrapper'),
 			property: 'height',
 			value: 0,
-			onComplete: () => {
+			onComplete: (options) => {
 				document.querySelector('.header-navigation').setAttribute('data-state', 'closed');
+				options.element.style.height = '';
 			}
 		});
+		document.querySelector('.header-navigation').setAttribute('data-state', 'closing');
 	}
 }
 
 function toggleNavigation() {
-	if (getNavigationState() == 'closing'
-	|| getNavigationState() == 'closed') {
-		setNavigationState('opened');
-	}
-	else {
-		setNavigationState('closed');
+	if (isMobileNavigation()) {
+		if (getNavigationState() == 'closing'
+		|| getNavigationState() == 'closed') {
+			setNavigationState('opened');
+		}
+		else {
+			setNavigationState('closed');
+		}
 	}
 }
 
