@@ -2,7 +2,7 @@ import waitForElement from './wait-for-element.js';
 const transitionAuto = require('@alexspirgel/transition-auto');
 
 function isMobileNavigation() {
-	return (window.matchMedia && window.matchMedia('(max-width: 400px)').matches);
+	return (window.matchMedia && window.matchMedia('(max-width: 425px)').matches);
 }
 
 function getNavigationState() {
