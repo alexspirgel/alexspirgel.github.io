@@ -83,11 +83,78 @@
 			</section>
 			<section class="portfolio" id="portfolio">
 				<h2 class="h2">Portfolio</h2>
-				<p></p>
 				<div class="portfolio__list-wrapper">
 					<ul class="portfolio__list">
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-pg" data-color="red">
+							<button class="card" data-micromodal-trigger="modal-ta" data-color="red">
+								<article class="card__content">
+									<img src="assets/images/portfolio/music-app.webp" alt="music app github repository website">
+									<div class="card__text">
+										<h1>Music App</h1>
+										<p>A custom built music player.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+							<div class="modal" id="modal-ta" aria-hidden="true" data-color="red">
+								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ta-title">
+									<div class="modal__close-wrapper">
+										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</div>
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-ta-title" tabindex="0">Music App</h2>
+									</header>
+									<main class="modal__main">
+										<p>I custom built a music player as part of a larger project I am working on. The player dynamically loads and plays music from a tiny custom API I built. Currently, the library and queue functionalities are less polished, and mostly exist to serve the player. Over time I plan to continue developing this application with more features.</p>
+										<p>I used the following technologies:</p>
+										<ul>
+											<li>TypeScript</li>
+											<li>React</li>
+											<li>Howler JS</li>
+											<li>SASS</li>
+											<li>Vite</li>
+											<li>Python</li>
+											<li>FastAPI</li>
+											<li>AWS S3</li>
+											<li>AWS Lambda</li>
+										</ul>
+										<p>To request credentials to be able to test out the player, please reach out to me. The app needs to be private for copyright reasons.</p>
+										<div class="modal__ctas"><a data-button-color="red" data-button-icon="new-window" href="https://github.com/alexspirgel/music-app" target="_blank">View The Repository</a><a data-button-color="red" data-button-icon="new-window" href="https://alexanderspirgel.com/music-app/" target="_blank">View The Demo</a></div>
+									</main>
+								</article>
+							</div>
+						</li>
+						<li class="portfolio__item">
+							<button class="card" data-micromodal-trigger="modal-ns" data-color="blue">
+								<article class="card__content">
+									<img src="assets/images/portfolio/no-scroll.webp" alt="No Scroll github repository website">
+									<div class="card__text">
+										<h1>No Scroll</h1>
+										<p>A JavaScript utility for disabling and re-enabling scroll without causing layout shift.</p>
+									</div>
+								</article>
+								<div class="card__shadow"><div class="card__shadow-line"></div></div>
+							</button>
+							<div class="modal" id="modal-ns" aria-hidden="true" data-color="blue">
+								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
+								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ns-title">
+									<div class="modal__close-wrapper">
+										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+									</div>
+									<header class="modal__header">
+										<h2 class="modal__title" id="modal-ns-title" tabindex="0">No Scroll</h2>
+									</header>
+									<main class="modal__main">
+										<p>I noticed that most methods for disabling scrolling had layout shift issues, so I built my own.</p>
+										<p>The script works by first calculating the width of the scrollbar. This is key to ensuring compatibility across devices with different scrollbar types. Then it displays a pseudo-element to occupy the space created when removing the scrollbar. The pseudo-element takes the appearance of a disabled scrollbar (when applicable). This prevents layout shift and makes the removal of the real scrollbar less jarring.</p>
+										<div class="modal__ctas"><a data-button-color="blue" data-button-icon="new-window" href="https://github.com/alexspirgel/no-scroll" target="_blank">View The Repository</a><a data-button-color="blue" data-button-icon="new-window" href="https://alexanderspirgel.com/no-scroll/demo/" target="_blank">View The Demo</a></div>
+									</main>
+								</article>
+							</div>
+						</li>
+						<li class="portfolio__item">
+							<button class="card" data-micromodal-trigger="modal-pg" data-color="yellow">
 								<article class="card__content">
 									<img src="assets/images/portfolio/penn-global.webp" alt="Penn Global website">
 									<div class="card__text">
@@ -97,7 +164,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-pg" aria-hidden="true" data-color="red">
+							<div class="modal" id="modal-pg" aria-hidden="true" data-color="yellow">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-pg-title">
 									<div class="modal__close-wrapper">
@@ -124,7 +191,7 @@
 							</div>
 						</li>
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-es" data-color="blue">
+							<button class="card" data-micromodal-trigger="modal-es" data-color="green">
 								<article class="card__content">
 									<img src="assets/images/portfolio/eastern-standard.webp" alt="Eastern Standard website">
 									<div class="card__text">
@@ -134,7 +201,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-es" aria-hidden="true" data-color="blue">
+							<div class="modal" id="modal-es" aria-hidden="true" data-color="green">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-es-title">
 									<div class="modal__close-wrapper">
@@ -165,7 +232,7 @@
 							</div>
 						</li>
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-cl" data-color="yellow">
+							<button class="card" data-micromodal-trigger="modal-cl" data-color="orange">
 								<article class="card__content">
 									<img src="assets/images/portfolio/cornell-law.webp" alt="Cornell Law School website">
 									<div class="card__text">
@@ -175,7 +242,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-cl" aria-hidden="true" data-color="yellow">
+							<div class="modal" id="modal-cl" aria-hidden="true" data-color="orange">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-cl-title">
 									<div class="modal__close-wrapper">
@@ -187,13 +254,13 @@
 									<main class="modal__main">
 										<img class="float-left-33" src="assets/images/portfolio/cornell-law.webp" alt="Cornell Law School website">
 										<p>Cornell Law School is one of many WordPress builds I worked on over the years at Eastern Standard. I worked with developers, designers, the project manager, and the QA team to develop this website as a custom WordPress theme.</p>
-										<div class="modal__ctas"><a data-button-color="yellow" data-button-icon="new-window" href="https://www.lawschool.cornell.edu" target="_blank">View Site</a></div>
+										<div class="modal__ctas"><a data-button-color="orange" data-button-icon="new-window" href="https://www.lawschool.cornell.edu" target="_blank">View Site</a></div>
 									</main>
 								</article>
 							</div>
 						</li>
 						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-ch" data-color="green">
+							<button class="card" data-micromodal-trigger="modal-ch" data-color="purple">
 								<article class="card__content">
 									<img src="assets/images/portfolio/cooper-health.webp" alt="Cooper Health website">
 									<div class="card__text">
@@ -203,7 +270,7 @@
 								</article>
 								<div class="card__shadow"><div class="card__shadow-line"></div></div>
 							</button>
-							<div class="modal" id="modal-ch" aria-hidden="true" data-color="green">
+							<div class="modal" id="modal-ch" aria-hidden="true" data-color="purple">
 								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
 								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ch-title">
 									<div class="modal__close-wrapper">
@@ -215,40 +282,12 @@
 									<main class="modal__main">
 										<img class="float-left-33" src="assets/images/portfolio/cooper-health.webp" alt="Cooper Health website">
 										<p>Cooper Health is one of many Drupal builds I worked on during my time at Eastern Standard. The project involved building a two-site multisite. The sites shared many design elements and had slightly different sets of available components. Additionally, I implemented custom modules that integrated with third party API services. I worked with developers, designers, the project manager, and the QA team to help develop these custom Drupal websites. I also handled technical communications with the client stakeholder group.</p>
-										<div class="modal__ctas"><a data-button-color="green" data-button-icon="new-window" href="https://www.cooperhealth.org" target="_blank">View Site (.org)</a><a data-button-color="green" data-button-icon="new-window" href="https://www.cooperhealth.edu" target="_blank">View Site (.edu)</a></div>
+										<div class="modal__ctas"><a data-button-color="purple" data-button-icon="new-window" href="https://www.cooperhealth.org" target="_blank">View Site (.org)</a><a data-button-color="purple" data-button-icon="new-window" href="https://www.cooperhealth.edu" target="_blank">View Site (.edu)</a></div>
 									</main>
 								</article>
 							</div>
 						</li>
-						<li class="portfolio__item">
-							<button class="card" data-micromodal-trigger="modal-ns" data-color="purple">
-								<article class="card__content">
-									<img src="assets/images/portfolio/no-scroll.webp" alt="No Scroll github repository website">
-									<div class="card__text">
-										<h1>No Scroll</h1>
-										<p>A JavaScript utility for disabling and re-enabling scroll without causing layout shift.</p>
-									</div>
-								</article>
-								<div class="card__shadow"><div class="card__shadow-line"></div></div>
-							</button>
-							<div class="modal" id="modal-ns" aria-hidden="true" data-color="purple">
-								<div class="modal__overlay" tabindex="-1" data-micromodal-close></div>
-								<article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-ns-title">
-									<div class="modal__close-wrapper">
-										<button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
-									</div>
-									<header class="modal__header">
-										<h2 class="modal__title" id="modal-ns-title" tabindex="0">No Scroll</h2>
-									</header>
-									<main class="modal__main">
-										<p>I noticed that most methods for disabling scrolling had layout shift issues, so I built my own.</p>
-										<p>The script works by first calculating the width of the scrollbar. This is key to ensuring compatibility across devices with different scrollbar types. Then it displays a pseudo-element to occupy the space created when removing the scrollbar. The pseudo-element takes the appearance of a disabled scrollbar (when applicable). This prevents layout shift and makes the removal of the real scrollbar less jarring.</p>
-										<div class="modal__ctas"><a data-button-color="purple" data-button-icon="new-window" href="https://github.com/alexspirgel/no-scroll" target="_blank">View The Repository</a><a data-button-color="purple" data-button-icon="new-window" href="https://alexanderspirgel.com/no-scroll/demo/" target="_blank">View The Demo</a></div>
-									</main>
-								</article>
-							</div>
-						</li>
-						<li class="portfolio__item">
+						<!-- <li class="portfolio__item">
 							<button class="card" data-micromodal-trigger="modal-ta" data-color="orange">
 								<article class="card__content">
 									<img src="assets/images/portfolio/transition-auto.webp" alt="transition auto github repository website">
@@ -275,7 +314,7 @@
 									</main>
 								</article>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</section>
