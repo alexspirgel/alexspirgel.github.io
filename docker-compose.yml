@@ -1,0 +1,25 @@
+services:
+  web:
+    image: nginx:alpine
+    container_name: static_web_server
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/usr/share/nginx/html:ro
+      # Hide docker-compose.yml from being served publicly
+      - /dev/null:/usr/share/nginx/html/docker-compose.yml:ro
+
+
+# Commands
+
+# Start container ("-d" runs it in detached mode so the terminal remains free for other commands)
+# docker compose up -d
+
+# Temporarily pause the container without removing it.
+# docker compose stop
+
+# Restart an existing container.
+# docker compose start
+
+# Stop the active web server container and remove the container from active memory.
+# docker compose down
