@@ -1,7 +1,7 @@
 services:
   web:
     image: nginx:alpine
-    container_name: static_web_server
+    container_name: alexspirgel.com
     ports:
       - "8080:80"
     volumes:
